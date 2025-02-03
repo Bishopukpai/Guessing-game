@@ -85,6 +85,7 @@ nav button{
     .squares {
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
+        padding: 50px;
     }
 }
 
@@ -95,6 +96,9 @@ nav button{
     }
 
     .squares {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 50px;
         gap: 8px;
     }
 
