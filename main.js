@@ -18,7 +18,7 @@ checkColour()
 function GenerateRandomColor(){
     for (let i = 0;  i < squares.length; i++){
         colours.push(
-            `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 256)})`
+            `rgb(${Math.floor(Math.random() * 256)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`
         );
     }
 }

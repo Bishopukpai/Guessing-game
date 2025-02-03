@@ -66,3 +66,40 @@ nav button{
 .celebrate {
     animation: flash 1s ease-in-out;
 }
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav button {
+        margin-top: 10px;
+    }
+
+    .square {
+        width: 120px;
+        height: 120px;
+    }
+
+    .squares {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .square {
+        width: 100px;
+        height: 100px;
+    }
+
+    .squares {
+        gap: 8px;
+    }
+
+    nav button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}
