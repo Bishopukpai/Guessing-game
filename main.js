@@ -47,12 +47,14 @@ function checkColour(){
                 score += 1;
                 scoreDisplay.textContent = `Score: ${score} 🚀 🎉`;
                 
-                reset()
+               
                 confetti({
                     particleCount: 100,
                     spread: 70,
                     origin: { y: 0.6 }
                 });
+
+                reset()
                 
             }else {
                 answerDisplay.textContent = 'Wrong'
@@ -72,8 +74,6 @@ function reset(){
     squares.forEach((square) => square.classList.remove('fade'))
 
     assign_colors();
-
-    checkColour()
 
     pickedColour = getRandomPickedColour() 
 }
