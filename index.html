@@ -1,26 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Specifies the character encoding for the document -->
     <meta charset="UTF-8">
+
+    <!-- Ensures proper scaling on different devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HNG Color Guessing task</title>
+
+    <!-- Title of the webpage -->
+    <title>HNG Color Guessing Task</title>
+
+    <!-- Link to the external CSS file for styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     
     <div class="container">
+        <!-- Header section containing the game title and score -->
         <div class="header">
-            <h2 data-testid="gameInstructions">Guess the color</h3>
-             <h1>RGB (255, 255, 255)</h1>
+            <!-- Instruction for the game -->
+            <h2 data-testid="gameInstructions">Guess the color</h2>
 
-             <h3 id="score-display" data-testid="score">Score: 0</h3>
+            <!-- Displays the target RGB color to be guessed -->
+            <h1>RGB (255, 255, 255)</h1>
+
+            <!-- Score display area -->
+            <h3 id="score-display" data-testid="score">Score: 0</h3>
         </div>
+
+        <!-- Navigation section containing game controls -->
         <nav>
+            <!-- Button to refresh colors without resetting the game -->
             <button>Refresh Colors</button>
+
+            <!-- Button to reset the game and start a new round -->
             <button id="reset-btn" data-testid="newGameButton">Reset Game</button>
-             <span class="correct" data-testid="gameStatus"></span>
+
+            <!-- Span element to display messages (e.g., "Correct!" or "Wrong!") -->
+            <span class="correct" data-testid="gameStatus"></span>
         </nav>
+
+        <!-- Container for the color squares -->
         <div class="squares" data-testid="colorBox">
+            <!-- Each div represents a color option for the player to choose -->
             <div class="square" data-testid="colorOption"></div>
             <div class="square" data-testid="colorOption"></div>
             <div class="square" data-testid="colorOption"></div>
@@ -30,8 +52,10 @@
         </div>
     </div>
 
+    <!-- Linking the external JavaScript file for game logic -->
     <script src="main.js"></script>
    
+    <!-- Confetti effect library for celebration animation -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1"></script>
 
 </body>

@@ -1,109 +1,127 @@
-body{
-    margin: 0;
-    height: 100vh;
-    background-color: black;
-    color: rgb(231, 139, 19);
+/* ===== General Page Styles ===== */
+body {
+    margin: 0; /* Removes default margin */
+    height: 100vh; /* Sets full viewport height */
+    background-color: black; /* Sets background color to black */
+    color: rgb(231, 139, 19); /* Sets text color to orange */
 }
 
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    /*min-height: 100vh;*/
+/* ===== Container Styles (Main Layout) ===== */
+.container {
+    display: flex; /* Enables flexbox for layout */
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    flex-direction: column; /* Arranges elements in a column */
+    width: 100%; /* Full width */
+    /* min-height: 100vh; Ensures full viewport height (commented out) */
 }
 
-nav{
-    background-color: antiquewhite;
-    color: brown;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
+/* ===== Navigation Bar Styles ===== */
+nav {
+    background-color: antiquewhite; /* Background color for navigation */
+    color: brown; /* Text color */
+    display: flex; /* Uses flexbox for layout */
+    justify-content: space-around; /* Spaces items evenly */
+    align-items: center; /* Aligns items to the center */
+    width: 100%; /* Full width */
 }
 
-nav button{
-    border: none;
-    outline: none;
-    padding: 10px 8px;
-    color: antiquewhite;
-    cursor: pointer; 
-    background: slategray;
+/* ===== Navigation Button Styles ===== */
+nav button {
+    border: none; /* Removes default border */
+    outline: none; /* Removes focus outline */
+    padding: 10px 8px; /* Adds padding for better button size */
+    color: antiquewhite; /* Sets text color */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    background: slategray; /* Background color */
 }
 
-.header{
-    background-color: aliceblue;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    flex-direction: column;
-}
-.square{
-    width: 200px;
-    height: 200px;
-    background-color: red;
-    margin: 10px;
-    border-radius: 50%;
-}
-.squares{
-    display: grid;
-    grid-template-columns: repeat(3, 200px);
-    gap: 20px;
+/* ===== Header Section ===== */
+.header {
+    background-color: aliceblue; /* Background color */
+    width: 100%; /* Full width */
+    display: flex; /* Enables flexbox */
+    justify-content: center; /* Centers content */
+    align-items: center; /* Aligns items vertically */
+    flex-direction: column; /* Stacks elements vertically */
 }
 
-.fade{
-    opacity: 0;
-    transition: all 0.5s;
+/* ===== Square (Game Elements) ===== */
+.square {
+    width: 200px; /* Square width */
+    height: 200px; /* Square height */
+    background-color: red; /* Default background color */
+    margin: 10px; /* Adds space around squares */
+    border-radius: 50%; /* Makes squares circular */
 }
+
+/* ===== Squares Grid (Game Board) ===== */
+.squares {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(3, 200px); /* 3 columns with fixed width */
+    gap: 20px; /* Space between squares */
+}
+
+/* ===== Fade-Out Effect for Wrong Answers ===== */
+.fade {
+    opacity: 0; /* Hides the element */
+    transition: all 0.5s; /* Smooth fade effect */
+}
+
+/* ===== Celebration Animation (Flashes Green) ===== */
 @keyframes flash {
-    0% { background-color: white; }
-    50% { background-color: lightgreen; }
-    100% { background-color: white; }
+    0% { background-color: white; } /* Starts with white */
+    50% { background-color: lightgreen; } /* Turns green */
+    100% { background-color: white; } /* Returns to white */
 }
 
 .celebrate {
-    animation: flash 1s ease-in-out;
+    animation: flash 1s ease-in-out; /* Applies the flash animation */
 }
 
+/* ===== Responsive Design (For Smaller Screens) ===== */
 @media (max-width: 768px) {
+    /* Adjust Navigation */
     nav {
-        flex-direction: column;
-        text-align: center;
+        flex-direction: column; /* Stack items in a column */
+        text-align: center; /* Center align text */
     }
 
     nav button {
-        margin-top: 10px;
+        margin-top: 10px; /* Adds spacing between buttons */
     }
 
+    /* Reduce Square Size */
     .square {
         width: 120px;
         height: 120px;
     }
 
+    /* Change Grid Layout to 2 Columns */
     .squares {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 50px;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+        gap: 10px; /* Reduces gap */
+        padding: 50px; /* Adds padding around */
     }
 }
 
 @media (max-width: 480px) {
+    /* Reduce Square Size for Smaller Screens */
     .square {
         width: 100px;
         height: 100px;
     }
 
+    /* Ensure 2 Columns on Small Screens */
     .squares {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
+        gap: 8px; /* Reduce gap for tight spacing */
         padding: 50px;
-        gap: 8px;
     }
 
+    /* Adjust Button Size */
     nav button {
-        font-size: 0.9rem;
-        padding: 8px 12px;
+        font-size: 0.9rem; /* Reduce font size */
+        padding: 8px 12px; /* Adjust padding */
     }
 }
